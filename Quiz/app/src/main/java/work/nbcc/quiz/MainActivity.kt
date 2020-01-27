@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        startView()
+
+        findViewById<TextView>(R.id.question_view).setText(questionBank[questionIndex].textResId)
 
         findViewById<ImageButton>(R.id.next_button).setOnClickListener{
             questionIndex = (questionIndex + 1) % 20
@@ -80,7 +81,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun startView(){
-        findViewById<TextView>(R.id.question_view).setText(questionBank[questionIndex].textResId)
-    }
+
 }
